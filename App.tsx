@@ -1,7 +1,7 @@
 import React, { useState, useRef, useCallback } from 'react';
 import { VOICES, TONES } from './constants';
 import { VoiceOption, ToneOption } from './types';
-import { generateSpeech } from './services/geminiService';
+import { generateSpeech } from "./services/geminiService.ts";
 import { decode, decodeAudioData, createWavBlob } from './utils/audioUtils';
 
 // アイコンコンポーネント
