@@ -1,10 +1,9 @@
 import { GoogleGenAI, Modality } from "@google/genai";
 
-if (!process.env.API_KEY) {
-  throw new Error("AIzaSyBEzOzQdr7nRN0viVkaiRb_kc2S2lt6inw");
-}
+const apiKey = import.meta.env.VITE_GEMINI_API_KEY as string;
+if (!apiKey) throw new Error("Thiếu VITE_GEMINI_API_KEY (Vercel → Settings → Environment Variables).");
+const ai = new GoogleGenAI({ apiKey });
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
 export async function generateSpeech(text: string, voiceName: string, tonePrefix: string): Promise<string> {
   try {
