@@ -1,7 +1,7 @@
 import { GoogleGenAI, Modality } from "@google/genai";
 
 if (!process.env.API_KEY) {
-  throw new Error("APIキーが設定されていません。process.env.API_KEYを確認してください。");
+  throw new Error("AIzaSyBEzOzQdr7nRN0viVkaiRb_kc2S2lt6inw");
 }
 
 const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
